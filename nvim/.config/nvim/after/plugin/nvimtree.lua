@@ -1,19 +1,8 @@
-local status_ok, nvimtree = pcall(require, "nvimtree")
+local status_ok, nvimtree = pcall(require, "nvim-tree")
 if not status_ok then
 	return
 end
 
--- init.lua
-
--- empty setup using defaults: add your own options
-require'nvim-tree'.setup {
-}
-
--- OR
-
--- setup with all defaults
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
--- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
