@@ -1,3 +1,3 @@
-require("plugins")
-require("options")
-require("mappings")
+require("plugins") -- nvim plugins
+require("options") -- nvim options
+require("mappings") -- nvim keymappings
