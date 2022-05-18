@@ -1,0 +1,36 @@
+format = """
+$time\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$line_break\
+$status\
+$character"""
+
+add_newline = true
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold purple"
+
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[](bold red)"
+
+[time]
+disabled = false
+use_12hr = false
+time_format = "%R"
+format = "[$time]($style) in "
+style = "bold yellow"
+
+[directory]
+#disabled = true
+truncation_length = 5
+truncate_to_repo = false
+
+[line_break]
+disabled = false
