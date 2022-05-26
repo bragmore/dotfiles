@@ -3,9 +3,6 @@ if not lspconfig_status_ok then
   return
 end
 
-lspconfig.util.default_config.on_attach = on_attach
-lspconfig.util.default_config.capabilities = require('cmp_nvim_lsp').update_capabilities(lspconfig.util.default_config.capabilities)
-
 -- sumneko_lua setup
 lspconfig.sumneko_lua.setup{
   settings = {
