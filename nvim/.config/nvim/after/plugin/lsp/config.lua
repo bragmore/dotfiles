@@ -106,6 +106,10 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
+
+-- default lsp config
+-- IMPORTANT NOTE! default config has to happen before all setup stuff which is defined in servers.lua
+-- "config.lua" is alphabetically before "servers.lua", otherwise we would loose our keymappings
 local defaults = lspconfig.util.default_config
 defaults.on_attach = on_attach
 defaults.capabilities = require('cmp_nvim_lsp').update_capabilities(defaults.capabilities)
