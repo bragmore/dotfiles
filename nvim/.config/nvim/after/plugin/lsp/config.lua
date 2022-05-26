@@ -1,13 +1,3 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-  return
-end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
-
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
   return
@@ -17,10 +7,6 @@ local lspinstaller_status_ok, nvimlspinstaller = pcall(require, "nvim-lsp-instal
 if not lspinstaller_status_ok then
   return
 end
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -51,93 +37,6 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   print("on attach function is being called!")
 end
-
-local lsp_symbols = {
-  Text = "   ",
-  Method = "   ",
-  Function = "   ",
-  Constructor = "   ",
-  Field = " ﴲ  ",
-  Variable = "[] ",
-  Class = "   ",
-  Interface = " ﰮ  ",
-  Module = "   ",
-  Property = " 襁 ",
-  Unit = "   ",
-  Value = "   ",
-  Enum = " 練 ",
-  Keyword = "   ",
-  Snippet = "   ",
-  Color = "  ",
-  File = "  ",
-  Reference = "  ",
-  Folder = "  ",
-  EnumMember = "   ",
-  Constant = " ﲀ ",
-  Struct = " ﳤ ",
-  Event = "  ",
-  Operator = "  ",
-  TypeParameter = "  ",
-}
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  formatting = {
-    deprecated = false,
-    format = function(entry, item)
-      item.kind = lsp_symbols[item.kind]
-      item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Nvim]",
-        path = "[Path]",
-        luasnip = "[Snippet]",
-      })[entry.source.name]
-
-      return item
-    end,
-  },
-
-  mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  }),
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = "nvim_lua" },
-    { name = "buffer" },
-    { name = "path" },
-    { name = 'emoji' }
-  },
-}
 
 nvimlspinstaller.setup({
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -207,19 +106,15 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 lspconfig.util.default_config.on_attach = on_attach
-lspconfig.util.default_config.capabilities = capabilities
 
-lspconfig.sumneko_lua.setup {
+-- sumneko_lua setup
+lspconfig.sumneko_lua.setup{
   settings = {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
@@ -246,25 +141,16 @@ lspconfig.emmet_ls.setup({
 lspconfig.tsserver.setup{}
 
 -- jsonls setup
-lspconfig.jsonls.setup {}
+lspconfig.jsonls.setup{}
 
 -- cssls setup
-lspconfig.cssls.setup {}
+lspconfig.cssls.setup{}
 
 -- html setup
-lspconfig.html.setup {}
+lspconfig.html.setup{}
 
 -- pyright setup
 lspconfig.pyright.setup{}
 
 -- rust analyzer setup
 lspconfig.rust_analyzer.setup{}
-
-
--- local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'html', 'jsonls', 'cssls', 'emmet_ls', 'sumneko_lua' }
--- for _, lsp in ipairs(servers) do
---   lspconfig[lsp].setup {
---     on_attach = on_attach,
---     capabilities = capabilities,
---   }
--- end
