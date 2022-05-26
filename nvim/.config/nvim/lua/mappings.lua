@@ -1,7 +1,6 @@
 -- options
 local opts = { noremap = true, silent = true }
 local opts2 = { silent = true }
-
 -- keymap variable shortcut
 local map = vim.api.nvim_set_keymap
 
@@ -27,7 +26,6 @@ map("n", "zz", "<cmd>bw<CR>", opts) -- close current buffer
 
 -- nvimtree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opts) -- toggle
-
 -- telescope
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts) -- find files
 map("n", "<leader>ft", "<cmd>Telescope<CR> lsp", opts) -- lsp
@@ -58,3 +56,16 @@ map("n", "<C-i>", "<cmd>BufferLineCycleNext<CR>", opts)
 -- toggleterm
 map("t", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
 map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
+
+-- local bufmap = vim.api.nvim_buf_set_keymap
+
+-- --- In lsp attach function
+-- bufmap(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+-- bufmap(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "gl", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+-- bufmap(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+-- bufmap(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
