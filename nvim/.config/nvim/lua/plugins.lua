@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
   use { 'folke/tokyonight.nvim' } -- colorscheme
   use { 'b3nj5m1n/kommentary' } -- commenting tool
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- better syntax highlighting
+  use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
   use { 'norcalli/nvim-colorizer.lua' } -- hexcolor code preview
   use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' }, tag = 'nightly' } -- filetree
   use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' } -- buffer tabs
@@ -26,8 +27,9 @@ return require('packer').startup(function(use)
   use { "hrsh7th/cmp-nvim-lua" } -- lua completions
   use { "L3MON4D3/LuaSnip" } --snippet engine
   use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-  use { 'RRethy/vim-illuminate' }
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- statusline
+  use { 'RRethy/vim-illuminate' } -- word highlighting
+  use { 'p00f/nvim-ts-rainbow' } -- rainbow paranetheses
 
   if packer_bootstrap then
     require('packer').sync()
