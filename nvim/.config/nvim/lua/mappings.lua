@@ -26,6 +26,7 @@ map("n", "zz", "<cmd>bw<CR>", opts) -- close current buffer
 
 -- nvimtree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opts) -- toggle
+
 -- telescope
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts) -- find files
 map("n", "<leader>ft", "<cmd>Telescope<CR> lsp", opts) -- lsp
