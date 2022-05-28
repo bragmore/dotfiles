@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 -- Example config in Lua
-vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = false
 vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.opt.background = "dark"
