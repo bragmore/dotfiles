@@ -36,7 +36,9 @@ stow */ # Everything (the '/' ignores the README)
 stow zsh # Just my zsh config
 ```
 
-If you want the same visuals for files and directories in your terminal - install exa:
+### Fonts & modern ls
+
+If you want the same visuals for files and directories in your terminal when ls - install exa:
 
 [Exa](https://github.com/ogham/exa)
 
@@ -44,7 +46,7 @@ For fonts I use Nerd Fonts (my default is currently Hack Nerd Font in Kitty):
 
 [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
-### Arch
+### Arch easy installation
 Exa
 ```bash 
 yay -S exa
