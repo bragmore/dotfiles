@@ -38,9 +38,18 @@ stow zsh # Just my zsh config
 
 If you want the same visuals for files and directories in your terminal - install exa:
 
-https://the.exa.website/
+[Exa](https://github.com/ogham/exa)
+
+For fonts I use Nerd Fonts (my default is currently Hack Nerd Font in Kitty):
+
+[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
 ### Arch
+Exa
 ```bash 
 yay -S exa
+```
+Nerd Fonts
+```bash
+yay -S nerd-fonts-complete
 ```
