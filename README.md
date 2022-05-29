@@ -8,7 +8,7 @@ My personal config files for:
 
 Neovim comes with builtin core LSP support, diagnostics, autocompletion, gitsigns and more! Everything configured in lua. Colorscheme also matches terminal colorscheme with a small touch of background transparency.
 
-![terminal](https://user-images.githubusercontent.com/17138968/170885412-1b9ca921-9234-4a9a-8423-00009f1be4b8.png)
+![image](https://user-images.githubusercontent.com/17138968/170885838-d1c4bcbc-a045-49b2-bee3-cc89b82004cb.png)
 ![plugins](https://user-images.githubusercontent.com/17138968/170885415-835a91c3-de7a-4481-a26f-cb0d944023a9.png)
 
 ## Installing
@@ -30,3 +30,10 @@ stow */ # Everything (the '/' ignores the README)
 ```bash
 stow zsh # Just my zsh config
 ```
+
+If you want the same visuals for files and directories in your terminal - install exa:
+
+https://the.exa.website/
+
+### Arch
+```bash yay -S exa```
