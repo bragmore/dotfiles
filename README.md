@@ -11,6 +11,11 @@ Neovim comes with builtin core LSP support, diagnostics, autocompletion, gitsign
 ![image](https://user-images.githubusercontent.com/17138968/170885838-d1c4bcbc-a045-49b2-bee3-cc89b82004cb.png)
 ![plugins](https://user-images.githubusercontent.com/17138968/170885415-835a91c3-de7a-4481-a26f-cb0d944023a9.png)
 
+Neovim filestructure:
+
+![image](https://user-images.githubusercontent.com/17138968/170886032-9b888da1-4662-4a43-8bb7-2623762e98c4.png)
+
+
 ## Installing
 
 You will need `git` and GNU `stow`
