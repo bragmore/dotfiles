@@ -48,6 +48,10 @@ For fonts I use Nerd Fonts (my default is currently Hack Nerd Font in Kitty):
 
 ### Arch guided & easy installation
 
+stow
+```bash
+yay -S stow
+```
 zsh
 ```bash
 yay -S zsh
