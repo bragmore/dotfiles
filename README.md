@@ -46,7 +46,24 @@ For fonts I use Nerd Fonts (my default is currently Hack Nerd Font in Kitty):
 
 [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
-### Arch easy installation
+### Arch guided & easy installation
+
+zsh
+```bash
+yay -S zsh
+```
+Neovim
+```bash
+yay -S neovim
+```
+Packer
+```bash
+yay -S nvim-packer-git
+```
+Starship
+```bash
+yay -S starship
+```
 Exa
 ```bash 
 yay -S exa
