@@ -36,4 +36,6 @@ If you want the same visuals for files and directories in your terminal - instal
 https://the.exa.website/
 
 ### Arch
-```bash yay -S exa```
+```bash 
+yay -S exa
+```
