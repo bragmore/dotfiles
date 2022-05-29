@@ -8,12 +8,12 @@ My personal config files for:
 
 Neovim comes with builtin core LSP support, diagnostics, autocompletion, gitsigns and more! Everything configured in lua. Colorscheme also matches terminal colorscheme with a small touch of background transparency.
 
-![image](https://user-images.githubusercontent.com/17138968/170885838-d1c4bcbc-a045-49b2-bee3-cc89b82004cb.png)
+![image](https://user-images.githubusercontent.com/17138968/170888308-6ec0e12b-8f5b-4abc-ae8a-48e4fab5ba1c.png)
 ![plugins](https://user-images.githubusercontent.com/17138968/170885415-835a91c3-de7a-4481-a26f-cb0d944023a9.png)
 
 Neovim file structure:
 
-![image](https://user-images.githubusercontent.com/17138968/170886032-9b888da1-4662-4a43-8bb7-2623762e98c4.png)
+![image](https://user-images.githubusercontent.com/17138968/170888361-c0f5a2e9-822c-462a-b1de-8917c6e3dda8.png)
 
 
 ## Installing
