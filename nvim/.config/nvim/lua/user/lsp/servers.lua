@@ -30,7 +30,7 @@ lspconfig.sumneko_lua.setup{
 -- emmet_ls setup
 lspconfig.emmet_ls.setup({
   capabilities = capabilities,
-  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact' },
 })
 
 -- tsserver setup
@@ -54,7 +54,10 @@ lspconfig.cssls.setup{
 }
 
 -- html setup
-lspconfig.html.setup{}
+lspconfig.html.setup{
+  filetypes = { "html" },
+  capabilities = capabilities,
+}
 
 -- pyright setup
 lspconfig.pyright.setup{}
