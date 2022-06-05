@@ -29,6 +29,7 @@ lspconfig.sumneko_lua.setup{
 
 -- emmet_ls setup
 lspconfig.emmet_ls.setup({
+  capabilities = capabilities,
   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
 })
 
@@ -39,7 +40,18 @@ lspconfig.tsserver.setup{}
 lspconfig.jsonls.setup{}
 
 -- cssls setup
-lspconfig.cssls.setup{}
+lspconfig.cssls.setup{
+  capabilities = capabilities,
+  css = {
+    validate = true
+  },
+  less = {
+    validate = true
+  },
+  scss = {
+    validate = true
+  }
+}
 
 -- html setup
 lspconfig.html.setup{}
